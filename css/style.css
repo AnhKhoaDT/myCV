@@ -1,20 +1,101 @@
 @media print {
-  @page {
-    margin: 0; /* loại bỏ khoảng cách mặc định */
-  }
+    @page {
+        margin: 8mm 10mm;
+        /* căn lề trang khi in */
+        size: A4;
+    }
 
-  body {
-    margin: 0;
-    padding: 0;
-  } 
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 0.85em !important;
+        /* thu nhỏ font toàn bộ khi in */
+        line-height: 1.35 !important;
+        background: #fff !important;
+    }
 
-  /* Nếu CV có container chính */
+    .container {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        max-width: 100% !important;
+    }
 
-  .container, .cv-wrapper {
-    margin: 0 auto !important;   /* căn giữa */
-    padding: 0 10mm !important;  /* chừa 2 bên để nhìn thoáng */
-    
-  }
+    .cv-header {
+        margin-bottom: 6px !important;
+    }
+
+    .cv-header h1 {
+        font-size: 1.5em !important;
+        margin-bottom: 0.1em !important;
+    }
+
+    .cv-header h2 {
+        font-size: 1em !important;
+        margin-bottom: 0.2em !important;
+    }
+
+    section {
+        margin-bottom: 8px !important;
+    }
+
+    .section-title {
+        margin-top: 6px !important;
+        margin-bottom: 0 !important;
+        font-size: 0.95em !important;
+    }
+
+    hr {
+        margin: 2px 0 4px 0 !important;
+    }
+
+    .project {
+        margin-bottom: 5px !important;
+    }
+
+    .project-info ul {
+        margin: 0 0 2px 14px !important;
+    }
+
+    .project-info ul li {
+        margin-bottom: 0 !important;
+    }
+
+    .project-meta {
+        margin: 2px 0 3px 0 !important;
+    }
+
+    .education-row {
+        margin: 4px 0 2px 0 !important;
+    }
+
+    .skills-table td {
+        padding: 2px 6px 2px 0 !important;
+    }
+
+    .interests-list {
+        margin: 0 !important;
+    }
+
+    footer {
+        margin-top: 4px !important;
+        font-size: 0.75em !important;
+    }
+
+    /* Đảm bảo link vẫn hiển thị màu và gạch chân trong PDF */
+    a,
+    a:visited {
+        color: #1565c0 !important;
+        text-decoration: underline !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Tránh ngắt trang giữa project */
+    .project {
+        page-break-inside: avoid;
+    }
 }
 
 
@@ -25,105 +106,131 @@
     font-size: 0.9em;
     padding-left: 12px;
 }
+
 .project-meta {
     display: block;
     color: #333;
     font-size: 0.9em;
     margin: 2px 0 5px 0;
-    
+
 }
+
 .project-meta a {
     color: #1976d2;
     text-decoration: none;
     word-break: break-all;
 }
+
 .project-meta a:hover {
     text-decoration: underline;
 }
+
 /* Education section styling */
 /* Education section styling */
 /* Education section styling */
 .education-row {
     display: flex;
     align-items: center;
-    margin: 10px 0 5px 0; /* giảm margin */
+    margin: 10px 0 5px 0;
+    /* giảm margin */
     font-size: 0.95em;
 }
+
 .education-date {
     color: #222;
     font-family: monospace;
     font-size: 0.9em;
     white-space: nowrap;
-    min-width: 110px; 
+    min-width: 110px;
     text-align: left;
 }
+
 .education-detail {
     font-size: 0.95em;
-    margin-left: 14px; /* giảm margin */
+    margin-left: 14px;
+    /* giảm margin */
     text-align: left;
     flex: 1;
     display: flex;
     align-items: center;
 }
+
 .education-detail strong {
     font-weight: 700;
     display: inline-block;
     vertical-align: top;
 }
+
 .education-detail em {
     font-style: italic;
 }
+
 .education-detail strong {
     font-weight: 700;
 }
+
 .education-detail em {
     font-style: italic;
 }
+
 body {
     font-family: 'Roboto', Arial, sans-serif;
     background: #f4f6f8;
     margin: 0;
     padding: 0;
-    font-size: 0.9em; /* giảm chung font-size */
-    line-height: 1.25; /* giảm khoảng cách giữa các dòng */
+    font-size: 0.9em;
+    /* giảm chung font-size */
+    line-height: 1.25;
+    /* giảm khoảng cách giữa các dòng */
 }
+
 .container {
     max-width: 950px;
-    margin: 20px auto;  /* giảm margin trên/dưới */
+    margin: 20px auto;
+    /* giảm margin trên/dưới */
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    padding: 25px 30px; /* giảm padding */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    padding: 25px 30px;
+    /* giảm padding */
 }
+
 .cv-header {
     text-align: center;
     margin-bottom: 18px;
 }
+
 .cv-header h1 {
     font-size: 1.8em;
     font-weight: bold;
     margin-bottom: 0.2em;
 }
+
 .cv-header h2 {
     font-size: 1.1em;
     font-weight: bold;
     margin: 0 0 0.5em 0;
 }
+
 .contact-row {
     font-size: 1.08em;
     color: #222;
     margin-bottom: 10px;
 }
+
 .contact-row .icon {
     margin: 0 6px 0 18px;
 }
+
 .contact-row .icon:first-child {
     margin-left: 0;
 }
+
 .muted {
     color: #888;
     font-style: italic;
 }
+
 .section-title {
     font-size: 1em;
     font-weight: bold;
@@ -131,68 +238,86 @@ body {
     margin-top: 1em;
     letter-spacing: 0.5px;
 }
+
 hr {
     border: none;
     border-top: 2px solid #222;
-    margin: 0.2em 0 0.5em 0; 
+    margin: 0.2em 0 0.5em 0;
 }
+
 section {
     margin-bottom: 12px;
 }
+
 .project {
     display: flex;
-     margin-bottom: 5px; /* giảm khoảng cách giữa projects */
+    margin-bottom: 5px;
+    /* giảm khoảng cách giữa projects */
 }
+
 .project-date {
     color: #222;
     font-family: monospace;
     padding-top: 2px;
-    width: 130px; /* thu hẹp */
+    width: 130px;
+    /* thu hẹp */
     font-size: 0.9em;
 }
+
 .project-info {
     flex: 1;
 }
+
 .project-info strong {
     font-size: 1em;
 }
+
 .project-info ul {
     margin: 0 0 4px 18px;
     font-size: 0.9em;
 }
+
 .role {
     font-weight: bold;
     font-size: 1em;
 }
+
 .skills-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 0.5em;
     margin-bottom: 1em;
-   
+
 }
+
 .skills-table td {
     border-bottom: 1px solid #e0e0e0;
-    padding: 4px 8px 4px 0; /* giảm padding */
+    padding: 4px 8px 4px 0;
+    /* giảm padding */
     font-size: 0.9em;
-    
+
 }
+
 .skills-table td:first-child {
     font-weight: bold;
 }
+
 .skills-table tr:last-child td {
     border-bottom: none;
 }
+
 footer {
     text-align: center;
     color: #888;
     font-size: 0.85em;
     margin-top: 15px;
 }
+
 a {
     color: #1976d2;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
